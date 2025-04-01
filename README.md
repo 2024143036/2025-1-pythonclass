@@ -32,6 +32,7 @@
 
 ## 프로젝트 1 : 파이값 구하기
 파이값을 구하고 그래프로 그림
+- <img src="img/파이수식.png">
 
 ```# 오일러공식을 이용한 파이 근사값 구하기
 
@@ -58,10 +59,7 @@ import matplotlib.pyplot as plt
 plt.plot(pilist)
 plt.show()
 ```
-
-
-
-- <img src="img/파이수식.png">
+- <img src="img/그래프.png">
 
 
 
