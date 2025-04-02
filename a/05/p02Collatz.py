@@ -8,8 +8,6 @@ import random
 
 n=random.randint(1,100)
 a=1
-m=0
-b=0
 
 print('n : ',n)
 while n != 1:
@@ -24,15 +22,24 @@ while n != 1:
 print(a,'단계')
 
 i=0
+max=0
+b=0
+c=0
+d=1
+
 while i<=100:
-    if i%2==1:
-        i=3*i+1
-        b=b+1
 
-    else:
-        print(a,'단계 n은 짝수 ',n)
-        i=i/2
-        b=b+1
-
+    while n != 1:
+        if i%2==1:
+            d=3*d+1
+            b=b+1
+        else:
+            d=d/2
+            b=b+1
+        d=i
+        if max<b:
+            max=b
+            c=d
+print(d)
 
 
