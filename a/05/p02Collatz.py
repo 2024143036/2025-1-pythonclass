@@ -7,16 +7,32 @@
 import random
 
 n=random.randint(1,100)
-a=0
+a=1
+m=0
+b=0
 
 print('n : ',n)
-while n > 1:
+while n != 1:
     if n%2==1:
+        print(a, '단계 n은 홀수 ', n)
         n=3*n+1
-        print('n은 홀수 ',n)
         a=a+1
     else:
+        print(a,'단계 n은 짝수 ',n)
         n=n/2
-        print('n은 짝수 ',n)
         a=a+1
 print(a,'단계')
+
+i=0
+while i<=100:
+    if i%2==1:
+        i=3*i+1
+        b=b+1
+
+    else:
+        print(a,'단계 n은 짝수 ',n)
+        i=i/2
+        b=b+1
+
+
+
