@@ -17,52 +17,48 @@ from po2Collatzfunc import collatz
 
 ncountl=[]
 #
-# for n in range(1,100):
-#     i=n
-#     ncount=0
-#     while i!=1:
-#         if i%2==1:
-#             i=3*i+1
-#         else:
-#             i=i/2
-#         ncount=ncount+1
-#     print(f'{ncount}')
-#     ncountl.append(ncount)
-#
-# print(ncountl)
-# print(sum(ncountl)/len(ncountl))
+for n in range(1,100):
+    i=n
+    ncount=0
+    while i!=1:
+        if i%2==1:
+            i=3*i+1
+        else:
+            i=i/2
+        ncount=ncount+1
+    print(f'{ncount}')
+    ncountl.append(ncount)
+#print(ncountl)
+#print(sum(ncountl)/len(ncountl))
 
 #최대값, 평균, 중앙값, 표준편차, 최빈값
 from collections import Counter
 
-# def calculate_stats(ncountl):
-#     if not ncountl:
-#         return None
+def calculate_stats(ncountl):
+    if not ncountl:
+        return None
+    max_val = max(ncountl)
+    mean_val = round(statistics.mean(ncountl),5)
+    median_val = round(statistics.median(ncountl),5)
+    stdev_val = round(statistics.stdev(ncountl),5) if len(ncountl) > 1 else 0
+    mode_val = statistics.multimode(ncountl)  # 여러 개일 경우 모두 반환
+    return {
+        '최대값': max_val,
+        '평균': mean_val,
+        '중앙값': median_val,
+        '표준편차': stdev_val,
+        '최빈값': mode_val
+    }
+data = [1, 2, 2, 3, 4, 5, 5, 5]
 #
-#     max_val = max(ncountl)
-#     mean_val = round(statistics.mean(ncountl),5)
-#     median_val = round(statistics.median(ncountl),5)
-#     stdev_val = round(statistics.stdev(ncountl),5) if len(ncountl) > 1 else 0
-#     mode_val = statistics.multimode(ncountl)  # 여러 개일 경우 모두 반환
-#
-#     return {
-#         '최대값': max_val,
-#         '평균': mean_val,
-#         '중앙값': median_val,
-#         '표준편차': stdev_val,
-#         '최빈값': mode_val
-#     }
-# data = [1, 2, 2, 3, 4, 5, 5, 5]
-#
-# stats = calculate_stats(ncountl)
-# for key, value in stats.items():
-#     print(f"{key}: {value}")
-#
-# print(f'최대값 : {max(ncountl):.5f}')
-# print(f'평균 : {statistics.mean(ncountl):.5f}')
-# print(f'중앙값 : {statistics.median(ncountl):.5f}')
-# print(f'최빈값 : {statistics.stdev(ncountl):.5f}')
-# print(f'표준편차 : {statistics.mode(ncountl):.5f}')
+stats = calculate_stats(ncountl)
+for key, value in stats.items():
+    print(f"{key}: {value}")
+print(f'최대값 : {max(ncountl):.5f}')
+print(f'평균 : {statistics.mean(ncountl):.5f}')
+print(f'중앙값 : {statistics.median(ncountl):.5f}')
+print(f'최빈값 : {statistics.stdev(ncountl):.5f}')
+print(f'표준편차 : {statistics.mode(ncountl):.5f}')
 
 start=time.time()
 
@@ -73,7 +69,7 @@ for n in range(1,maxnum):
     ncount=collatz(n)
     ncounta[n-1]=ncount
 
-print(ncounta)
+#print(ncounta)
 
 print(f'최대값 : {np.max(ncounta)}')
 print(f'평균 : {np.mean(ncounta):.5f}')
