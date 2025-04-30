@@ -20,7 +20,7 @@ class SoccerPlayer(object):
 
 # SoccerPlayer 클래스가 jh 오브젝트를 생성함
 # 클래스의 생성함수 constructor가 실행됨
-jh = SoccerPlayer(name="A", position="MF", back_number=10)
+jh = SoccerPlayer("A","MF",10)
 
 # jh 객체를 출력
 print(jh)
